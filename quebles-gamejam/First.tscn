@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bj075ag70er6i"]
+[gd_scene load_steps=27 format=3 uid="uid://bj075ag70er6i"]
 
 [ext_resource type="Texture2D" uid="uid://c6rqkxmufccf4" path="res://Assets/Tileset/decorative_cracks_coasts_animation.png" id="1_eq1jt"]
 [ext_resource type="Texture2D" uid="uid://bqg87hwgce8tp" path="res://Assets/Tileset/decorative_cracks_floor.png" id="2_2krbk"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cyepm6d8dnlbc" path="res://Assets/Tileset/Water_coasts_animation.png" id="11_cp7p8"]
 [ext_resource type="PackedScene" uid="uid://drpbbrhwqh0nh" path="res://Player.tscn" id="12_50s8t"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="13_6trop"]
+[ext_resource type="PackedScene" uid="uid://47ekni07fivv" path="res://orc_npc.tscn" id="14_civey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_067vg"]
 texture = ExtResource("1_eq1jt")
@@ -3299,5 +3300,18 @@ format = 2
 position = Vector2(0, 3)
 script = ExtResource("13_6trop")
 
+[node name="Orc-NPC" parent="." instance=ExtResource("14_civey")]
+position = Vector2(-107, -27)
+
+[node name="Sprite2D" parent="Orc-NPC/CharacterBody2D" index="0"]
+position = Vector2(4, 1)
+
+[node name="PathFollow2D" parent="Orc-NPC/Path2D" index="0"]
+rotation = -3.09457
+progress = 720.72
+rotates = false
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(9, 18)
+
+[editable path="Orc-NPC"]
