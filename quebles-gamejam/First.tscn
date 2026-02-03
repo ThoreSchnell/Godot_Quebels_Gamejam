@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bj075ag70er6i"]
+[gd_scene load_steps=26 format=3 uid="uid://bj075ag70er6i"]
 
 [ext_resource type="Texture2D" uid="uid://c6rqkxmufccf4" path="res://Assets/Tileset/decorative_cracks_coasts_animation.png" id="1_eq1jt"]
 [ext_resource type="Texture2D" uid="uid://bqg87hwgce8tp" path="res://Assets/Tileset/decorative_cracks_floor.png" id="2_2krbk"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://tps5lmiaty57" path="res://Assets/Tileset/trap_animation.png" id="9_53oj6"]
 [ext_resource type="Texture2D" uid="uid://du0jobowdwse7" path="res://Assets/Tileset/walls_floor.png" id="10_o3o0r"]
 [ext_resource type="Texture2D" uid="uid://cyepm6d8dnlbc" path="res://Assets/Tileset/Water_coasts_animation.png" id="11_cp7p8"]
+[ext_resource type="PackedScene" uid="uid://drpbbrhwqh0nh" path="res://Player.tscn" id="12_50s8t"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="13_6trop"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_067vg"]
 texture = ExtResource("1_eq1jt")
@@ -3292,3 +3294,10 @@ sources/10 = SubResource("TileSetAtlasSource_081kk")
 position = Vector2(222.27, 235.357)
 tile_set = SubResource("TileSet_etxop")
 format = 2
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("12_50s8t")]
+position = Vector2(0, 3)
+script = ExtResource("13_6trop")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(9, 18)
